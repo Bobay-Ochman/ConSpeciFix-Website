@@ -1,0 +1,31 @@
+<center>
+<H1>Bacteria Species Test</H1>
+
+</center>
+<br><br><br><br>
+<br>
+
+
+<center>
+
+    <div id="dropbox" class="dropbox" ng-class="dropClass"><span>{{dropText}}</span></div>
+    <div ng-show="files.length">
+        <div ng-repeat="file in files.slice(0)"> <br>
+            <span>{{file.webkitRelativePath || file.name}}</span>
+            (<span ng-switch="file.size > 1024*1024">
+                <span ng-switch-when="true">{{file.size / 1024 / 1024 | number:2}} MB</span>
+                <span ng-switch-default>{{file.size / 1024 | number:2}} kB</span>
+            </span>)
+        </div>
+        <br>
+        <input type="button" class="btn btn-default" ng-click="uploadFile()" value="Upload" />
+    </div>
+    <br>
+    <div ng-show="timeStamp>0">
+        <span>hello! We have answers</span>
+        <br>
+        <br>
+        <span> an answer: </span> {{timeStamp}}
+    </div>
+
+</center>
