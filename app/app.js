@@ -3,8 +3,10 @@ var http = require("http"),
     path = require("path"),
     fs = require("fs"),
     qs = require('querystring'),
-    port = process.env.PORT || 3000
-
+    port = process.env.PORT || 3000,
+    fs = require('fs'),
+    formidable = require('formidable'),
+    util = require('util');
 
 
 const runSpawn = require('child_process').spawn;
@@ -19,6 +21,7 @@ testCode.stdout.on('data', function (data) {
 testCode.stderr.on('data', function (data) {
   serverLog('Test stderr: ' + data.toString());
 });
+
 
 function serverLog(data){
   console.log("***"+ Date.now()+" "+data);
@@ -58,43 +61,40 @@ http.createServer(function(request, response) {
     });
   }
 
+
   if(request.method==="POST"){
-    if (request.url === "/goFile") {
+    if (request.url === "/upload") {
       console.log('Request recieved.');
-      var requestBody = '';
-      request.on('data', function(data) {
-        requestBody += data;
-        if(requestBody.length > 1e7) {
-          response.writeHead(413, 'Request Entity Too Large', {'Content-Type': 'text/html'});
-          response.end('<!doctype html><html><head><title>413</title></head><body>413: Request Entity Too Large</body></html>');
-        }
+
+      var form = new formidable.IncomingForm();
+      var timeStamp = new Date().getTime();
+
+      form.uploadDir = 'upload/'+ timeStamp;
+      fs.mkdir(form.uploadDir,function(){
+        form.parse(request, function(err, fields, files) {
+          const runCode = runSpawn('python',['engines/go.py',form.uploadDir]);
+          runCode.stdout.on('data', function (data) {
+            serverLog('stdout: ' + data.toString());
+          });
+          runCode.stderr.on('data', function (data) {
+            serverLog('stderr: ' + data.toString());
+          });
+          runCode.on('close', (code) => {
+            console.log(`child process exited with code ${code}`);
+            console.log(''+ new Date().getTime());
+            serverLog(`child process exited with code ${code}`);
+            response.writeHead(200, {'content-type': 'text/plain'});
+            response.write(''+ new Date().getTime());
+            response.end();
+          });
+          runCode.on('error', (err) => {
+            serverLog(err);
+            console.log('what is going on');
+            console.log(err);
+          });
+        });    
       });
-      request.on('end', function() {
-        console.log('End recieved');
-        serverLog('Server record of requestBody:');
-        serverLog(requestBody);
-        serverLog('End of Server record of requestBody');
-        const runCode = runSpawn('python',['engines/speciate/go.py',requestBody]);
-        runCode.stdout.on('data', function (data) {
-          serverLog('stdout: ' + data.toString());
-        });
-        runCode.stderr.on('data', function (data) {
-          serverLog('stderr: ' + data.toString());
-        });
-        runCode.on('close', (code) => {
-          console.log(`child process exited with code ${code}`);
-          response.writeHead(200, {"Content-Type": "text/plain"});
-          console.log(''+ new Date().getTime());
-          response.write(''+ new Date().getTime());
-          serverLog(`child process exited with code ${code}`);
-          response.end();
-        });
-        runCode.on('error', (err) => {
-          serverLog(err);
-          console.log('what is going on');
-          console.log(err);
-        });
-      });
+
     } else {
       response.writeHead(404, 'Resource Not Found', {'Content-Type': 'text/html'});
       response.end('<!doctype html><html><head><title>404</title></head><body>404: Resource Not Found</body></html>');

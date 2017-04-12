@@ -90,7 +90,7 @@ angular.module('myApp.home', ['ngRoute'])
                 //THIS IS THE TIMESTAMP :D :D :D :D :D :D :D
             }
         };
-        xhr.open("POST", "/goFile")
+        xhr.open("POST", "/upload")
         xhr.send(fd)
 
     }
