@@ -81,10 +81,10 @@ http.createServer(function(request, response) {
           });
           runCode.on('close', (code) => {
             console.log(`child process exited with code ${code}`);
-            console.log(''+ new Date().getTime());
+            console.log(''+ timeStamp);
             serverLog(`child process exited with code ${code}`);
             response.writeHead(200, {'content-type': 'text/plain'});
-            response.write(''+ new Date().getTime());
+            response.write(''+ timeStamp);
             response.end();
           });
           runCode.on('error', (err) => {
