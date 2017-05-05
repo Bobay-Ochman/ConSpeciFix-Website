@@ -1,6 +1,0 @@
-Hello! Welcome to the readme for our website
-
-This Angular / Bootstrap website has two different layers:
-index.html contains the "wrappers" for the website (the nav bar and the footer at the bottom of the screen) while all of the content pages (home page, people, process, etc.) are all in seperate files.
-
-This website was branched off of www.brianellissound.com, and thus was origionaly planned for launch using Amazon Web Service's Elastic Beanstalk. Several of the files (init.sh, test.sh, and .ebextensions) all refer to tests, initiation scripts, etc. that are needed to run this website on EB

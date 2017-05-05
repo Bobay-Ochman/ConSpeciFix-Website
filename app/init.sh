@@ -2,13 +2,6 @@
 echo 'hello from init script!'
 echo Defaults:root \!requiretty >> /etc/sudoers 
 
-#lilypond
-sudo wget http://download.linuxaudio.org/lilypond/binaries/linux-64/lilypond-2.18.2-1.linux-64.sh
-export HOME=/usr/local
-sudo chmod 777 lilypond-2.18.2-1.linux-64.sh
-yes | sudo sh lilypond-2.18.2-1.linux-64.sh
-
-export HOME=/home/ec2-user
-#java
-sudo yum install -y java-1.8.0
-sudo yum remove -y java-1.7.0-openjdk
+sudo umount /var/app/current/efs || echo 'whoops! cant umount the old system!'
+sudo yum install -y nfs-utils
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-6813c4c1.efs.us-west-2.amazonaws.com:/ /tmp/deployment/application/efs || echo 'whoops! failed to connect to the file system'

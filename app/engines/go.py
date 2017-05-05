@@ -11,5 +11,7 @@ files = os.listdir(folderPath)
 fd = files[0]
 path = folderPath+fd
 os.system('unzip '+path+ ' -d '+folderPath)
-
-print 'all done!'
+os.system('mv '+folderPath + ' '+ 'efs/'+folderPath)
+print 'all done with the easy stuff.'
+print 'About to start literally all of the analysis.'
+os.chdir('efs/scripts')

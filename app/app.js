@@ -11,6 +11,7 @@ var http = require("http"),
 
 const runSpawn = require('child_process').spawn;
 
+
 fs.writeFile("server.log","Starting Log...",function(err){});
 
 const testSpawn = require('child_process').spawn;
@@ -64,14 +65,22 @@ http.createServer(function(request, response) {
 
   if(request.method==="POST"){
     if (request.url === "/upload") {
-      console.log('Request recieved.');
+      console.log('Upload request recieved.');
 
       var form = new formidable.IncomingForm();
       var timeStamp = new Date().getTime();
 
-      form.uploadDir = 'upload/'+ timeStamp;
+      form.uploadDir = 'uploads/'+ timeStamp;
+      console.log("timeStamp: "+timeStamp);
+      console.log("uploadDir: "+form.uploadDir);
+
       fs.mkdir(form.uploadDir,function(){
+        if (fs.existsSync(form.uploadDir)) {
+            console.log("we've got some nice info! "+ form.uploadDir)
+        }
         form.parse(request, function(err, fields, files) {
+          console.log("We are about to do the thing!")
+          
           const runCode = runSpawn('python',['engines/go.py',form.uploadDir]);
           runCode.stdout.on('data', function (data) {
             serverLog('stdout: ' + data.toString());
