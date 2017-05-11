@@ -1,2 +1,3 @@
-app/upload/*
+app/uploads/*
 dist/*
+app/efs/*
