@@ -30,9 +30,10 @@ function serverLog(data){
 
 
 
-http.createServer(function(request, response) {
+var server = http.createServer(function(request, response) {
   serverLog(request.method);
   serverLog(request.url);
+
   if(request.method==="GET"){
     var uri = url.parse(request.url).pathname
       , filename = path.join(process.cwd(), uri);
@@ -68,6 +69,7 @@ http.createServer(function(request, response) {
       console.log('Upload request recieved.');
 
       var form = new formidable.IncomingForm();
+      form.maxFieldsSize = 1024 * 1024 * 1024;
       var timeStamp = new Date().getTime();
 
       form.uploadDir = 'uploads/'+ timeStamp;
@@ -84,22 +86,23 @@ http.createServer(function(request, response) {
           const runCode = runSpawn('python',['engines/go.py',form.uploadDir]);
           runCode.stdout.on('data', function (data) {
             serverLog('stdout: ' + data.toString());
+            if(data.toString().includes('we have started the devil.')){
+              serverLog('Done, we have started the devil: '+ timeStamp);
+              response.writeHead(200, {'content-type': 'text/plain'});
+              response.write(''+ timeStamp);
+              response.end();
+            }
           });
           runCode.stderr.on('data', function (data) {
             serverLog('stderr: ' + data.toString());
           });
           runCode.on('close', (code) => {
-            console.log(`child process exited with code ${code}`);
-            console.log(''+ timeStamp);
-            serverLog(`child process exited with code ${code}`);
-            response.writeHead(200, {'content-type': 'text/plain'});
-            response.write(''+ timeStamp);
-            response.end();
+              serverLog(`child process exited with code ${code}`);            
           });
           runCode.on('error', (err) => {
             serverLog(err);
-            console.log('what is going on');
-            console.log(err);
+            serverLog('what is going on');
+            serverLog(err);
           });
         });    
       });
@@ -110,6 +113,12 @@ http.createServer(function(request, response) {
     }
   }
 
-}).listen(parseInt(port, 10));
+})
+console.log(server)
+server.listen(parseInt(port, 10));
 
 console.log("Server running at\n  => http://localhost:" + port + "/\nCTRL + C to shutdown");
+
+
+
+

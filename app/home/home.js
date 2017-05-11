@@ -76,6 +76,7 @@ angular.module('myApp.home', ['ngRoute'])
         }
         console.log(fd.getAll('uploadedFile'))
         var xhr = new XMLHttpRequest()
+        console.log(xhr)
         xhr.upload.addEventListener("progress", uploadProgress, false)
         xhr.addEventListener("load", uploadComplete, false)
         xhr.addEventListener("error", uploadFailed, false)
@@ -90,6 +91,7 @@ angular.module('myApp.home', ['ngRoute'])
                 //THIS IS THE TIMESTAMP :D :D :D :D :D :D :D
             }
         };
+        console.log(xhr.upload)
         xhr.open("POST", "/upload")
         xhr.send(fd)
 
