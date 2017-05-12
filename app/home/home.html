@@ -13,11 +13,23 @@
   <div class="col-sm-10"> 
 
     Get definitive results, fast!
-    <ul>
+   <!--  <ul>
     <li> <b> Prepeare your data: </b> find your FASTA file (.fa) containing the test genome</li>
-    <li> <b> Upload your data: </b> Drag and drop your file into the field below</li>
-    <li> <b> Let us know what you know: </b> Select the species set you would like to test your genome against.</li>
-    <li> <b> Get Answers: </b> We'll email you when we have some results to share with you.</li>
+    <li> <b> Upload your data: </b> drag and drop your file into the field below</li>
+    <li> <b> Tell us what you know: </b> select the species set you would like to test your genome against.</li>
+    <li> <b> Get Answers: </b> we'll email you when we have some results to share with you.</li>
+    </ul>
+    <br>
+    Alternativly, if you have annotated genome files, (.gff and .fna) you can combine them into a single zip file and upload them together. To use this option: -->
+    <ul>
+    <li> <b> Obtain your data: </b> obtain .gff and .fna files through sequencing, or go to <a target="_blank" href="https://www.ncbi.nlm.nih.gov">NCBI</a> (a good example <a target="_blank" href="https://www.ncbi.nlm.nih.gov/assembly/GCA_001544855.1">here</a>)</li>
+    <li> <b> Compress the files: </b> compress your .gff and .fna files into a zip file. (tutorials <a target="_blank" href="http://www.wikihow.com/Zip-Files-Together">here</a>)</li>
+<!--   </ul>
+  Then, just like before
+  <ul> -->
+    <li> <b> Upload your data: </b> drag and drop your .zip into the field below</li>
+    <li> <b> Tell us what you know: </b> select the species set you would like to test your genome against.</li>
+    <li> <b> Get Answers: </b> we'll email you when we have some results to share with you.</li>
     </ul>
     Happy testing!
 
@@ -26,7 +38,6 @@
 </div>
 
 
-<br>
 <br>
 <center>
 
@@ -67,7 +78,7 @@
         <div class="row">
           <div class="col-sm-4"> &nbsp </div>
           <div class="col-sm-4"> 
-            <input type="button" class="btn btn-default" ng-click="uploadFile()" value="Upload" />
+            <input type="button" class="btn btn-default" ng-click="uploadFile()" value="Upload and Begin Comparison" />
           </div>
           <div class="col-sm-4"> &nbsp </div>
         </div>
