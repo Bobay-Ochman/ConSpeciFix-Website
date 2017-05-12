@@ -16,7 +16,10 @@ species = sys.argv[3]
 files = os.listdir('/var/app/current/'+folderPath)
 fd = files[0]
 path = folderPath+fd
-os.system('unzip '+path+ ' -d '+folderPath)
+try:
+	os.system('unzip '+path+ ' -d '+folderPath)
+except:
+	print 'could not unzip file'
 os.system('mv /var/app/current/'+folderPath + ' '+ '/var/app/current/efs/'+folderPath)
 os.chdir('/var/app/current/efs/ConSpeciFix/web/')
 
@@ -26,8 +29,10 @@ testGenome = ''
 for f in files:
 	if f.endswith('.fa'):
 		testGenome = f.strip('.fa')
-	elif f.endswith('.gff'):
-		testGenome = f.strip('.gff')
+	if f.endswith('.fna'):
+		#rename
+		os.system('mv /var/app/current/efs/'+path + ' /var/app/current/efs/'+path.strip('.fna')+'.fa')
+		testGenome = f.strip('.fna')
 if (testGenome == '') :
 	print 'Couldnt find the file to look at'
 	os.system('python mail.py ' +species + ' n/a '+timestamp+' '+email + ' error')
