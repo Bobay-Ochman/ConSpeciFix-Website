@@ -1,15 +1,38 @@
 <center>
-<H1>Bacteria Species Test</H1>
+
+  <h1>ConSpeciFix</h1>
+  <h1><small><i>bacteria indentification for a new age</i></small></h1>
+<hr width="70%" size="2">
 
 </center>
-<br><br><br><br>
 <br>
 
 
+<div class="row">
+  <div class="col-sm-1"> &nbsp </div>
+  <div class="col-sm-10"> 
+
+    Get definitive results, fast!
+    <ul>
+    <li> <b> Prepeare your data: </b> find your FASTA file (.fa) containing the test genome</li>
+    <li> <b> Upload your data: </b> Drag and drop your file into the field below</li>
+    <li> <b> Let us know what you know: </b> Select the species set you would like to test your genome against.</li>
+    <li> <b> Get Answers: </b> We'll email you when we have some results to share with you.</li>
+    </ul>
+    Happy testing!
+
+  </div>
+  <div class="col-sm-1"> &nbsp </div>
+</div>
+
+
+<br>
+<br>
 <center>
 
     <div id="dropbox" class="dropbox" ng-class="dropClass"><span>{{dropText}}</span></div>
-    <div ng-show="files.length">
+    <!-- <div ng-show="files.length"> -->
+    <div ng-show="true">
         <div ng-repeat="file in files.slice(0)"> <br>
             <span>{{file.webkitRelativePath || file.name}}</span>
             (<span ng-switch="file.size > 1024*1024">
@@ -18,7 +41,38 @@
             </span>)
         </div>
         <br>
-        <input type="button" class="btn btn-default" ng-click="uploadFile()" value="Upload" />
+
+        <div class="row">
+          <div class="col-sm-4"> &nbsp </div>
+          <div class="col-sm-4">
+            <div class="form-group">
+              <input type="text" class="form-control" id="usr" ng-model="email" placeholder="your@email.com" >
+            </div>
+          </div>
+          <div class="col-sm-4">&nbsp </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4"> &nbsp </div>
+          <div class="col-sm-4"> 
+           <div class="form-group">
+            <select class="form-control" id="exampleSelect" ng-model="species">
+              <option disabled> Choose Species </option>
+              <option value="Mycobacterium_africanum" >Mycobacterium africanum</option>
+            </select>
+          </div>  
+          </div>
+          <div class="col-sm-4"> &nbsp </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-4"> &nbsp </div>
+          <div class="col-sm-4"> 
+            <input type="button" class="btn btn-default" ng-click="uploadFile()" value="Upload" />
+          </div>
+          <div class="col-sm-4"> &nbsp </div>
+        </div>
+          
+        
     </div>
     <br>
     <div ng-show="progress>-1"> progress: {{progress}}</div>

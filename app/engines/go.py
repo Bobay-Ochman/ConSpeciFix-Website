@@ -6,14 +6,35 @@ os.system('id')
 
 print os.path.dirname(os.path.realpath(__file__))
 
+#init
+timestamp = sys.argv[1]
 folderPath = sys.argv[1]+'/'
-files = os.listdir(folderPath)
+email = sys.argv[2]
+species = sys.argv[3]
+
+#unzip the files
+files = os.listdir('/var/app/current/efs/'+folderPath)
 fd = files[0]
 path = folderPath+fd
 os.system('unzip '+path+ ' -d '+folderPath)
 os.system('mv /var/app/current/'+folderPath + ' '+ '/var/app/current/efs/'+folderPath)
+os.chdir('/var/app/current/efs/ConSpeciFix/web/')
+
+#find name of the species we are searching for
+files = os.listdir('/var/app/current/efs/'+folderPath)
+testGenome = ''
+for f in files:
+	if f.endswith('.fa'):
+		testGenome = f.strip('.fa')
+	elif f.endswith('.gff'):
+		testGenome = f.strip('.gff')
+if (testGenome == '') :
+	print 'Couldnt find the file to look at'
+	os.system('python mail.py ' +species + ' n/a '+timestamp+' '+email + ' error')
+	exit()
+
 print 'all done with the easy stuff.'
 print 'About to start literally all of the analysis.'
-os.chdir('/var/app/current/efs/ConSpeciFix/web/')
-os.system('sh go.sh  &')
+
+os.system('python runner.py '+ species +' '+testGenome+' '+ timestamp+' '+email)
 print 'we have started the devil.'

@@ -74,6 +74,8 @@ angular.module('myApp.home', ['ngRoute'])
         for (var i in $scope.files) {
             fd.append("uploadedFile", $scope.files[i])
         }
+        fd.append("email",$scope.email)
+        fd.append("species",$scope.species)
         console.log(fd.getAll('uploadedFile'))
         var xhr = new XMLHttpRequest()
         console.log(xhr)
