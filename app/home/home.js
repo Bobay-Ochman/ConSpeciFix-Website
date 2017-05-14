@@ -15,6 +15,7 @@ angular.module('myApp.home', ['ngRoute'])
     $scope.uploadMessage = 'Select File';
     $scope.emailAtSubmit = '';
     $scope.timeStamp = 0
+    $scope.submitted = false;
     var dropbox = document.getElementById("dropbox")
     $scope.dropText = 'Drop files here...'
 
@@ -40,6 +41,7 @@ angular.module('myApp.home', ['ngRoute'])
         })
     }, false)
     dropbox.addEventListener("drop", function(evt) {
+
         console.log('drop evt:', JSON.parse(JSON.stringify(evt.dataTransfer)))
         evt.stopPropagation()
         evt.preventDefault()
@@ -47,14 +49,16 @@ angular.module('myApp.home', ['ngRoute'])
             $scope.dropText = 'Drop files here...'
             $scope.dropClass = ''
         })
-        var files = evt.dataTransfer.files
-        if (files.length > 0) {
-            $scope.$apply(function(){
-                $scope.files = []
-                for (var i = 0; i < files.length; i++) {
-                    $scope.files.push(files[i])
-                }
-            })
+        if(!$scope.submitted){
+            var files = evt.dataTransfer.files
+            if (files.length > 0) {
+                $scope.$apply(function(){
+                    $scope.files = []
+                    for (var i = 0; i < files.length; i++) {
+                        $scope.files.push(files[i])
+                    }
+                })
+            }
         }
     }, false)
 
@@ -72,6 +76,7 @@ angular.module('myApp.home', ['ngRoute'])
 
     $scope.uploadFile = function() {
         var fd = new FormData()
+        console.log($scope.files)
         for (var i in $scope.files) {
             fd.append("uploadedFile", $scope.files[i])
         }
@@ -95,10 +100,11 @@ angular.module('myApp.home', ['ngRoute'])
                 //THIS IS THE TIMESTAMP :D :D :D :D :D :D :D
             }
         };
+        window.scrollTo(0, 2000)
+        $scope.submitted = true;
         console.log(xhr.upload)
         xhr.open("POST", "/upload")
         xhr.send(fd)
-        window.scrollTo(0, 2000)
     }
 
     function uploadProgress(evt) {
