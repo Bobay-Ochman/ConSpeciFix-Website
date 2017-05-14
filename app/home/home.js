@@ -13,6 +13,7 @@ angular.module('myApp.home', ['ngRoute'])
 
     $scope.buttonMessage = 'Run Calculations!';
     $scope.uploadMessage = 'Select File';
+    $scope.emailAtSubmit = '';
     $scope.timeStamp = 0
     var dropbox = document.getElementById("dropbox")
     $scope.dropText = 'Drop files here...'
@@ -74,6 +75,7 @@ angular.module('myApp.home', ['ngRoute'])
         for (var i in $scope.files) {
             fd.append("uploadedFile", $scope.files[i])
         }
+        $scope.emailAtSubmit = $scope.email
         fd.append("email",$scope.email)
         fd.append("species",$scope.species)
         console.log(fd.getAll('uploadedFile'))
@@ -96,7 +98,7 @@ angular.module('myApp.home', ['ngRoute'])
         console.log(xhr.upload)
         xhr.open("POST", "/upload")
         xhr.send(fd)
-
+        window.scrollTo(0, 2000)
     }
 
     function uploadProgress(evt) {

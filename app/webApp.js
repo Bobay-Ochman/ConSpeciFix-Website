@@ -6,10 +6,6 @@ angular.module('myApp', [
   'myApp.home',
   'myApp.people',
   'myApp.process',
-  'myApp.genMel',
-  'myApp.genMelView',
-  'myApp.genMelPaper',
-  'myApp.genMelPsy',
   'myApp.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

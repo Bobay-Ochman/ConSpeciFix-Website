@@ -100,10 +100,14 @@ var server = http.createServer(function(request, response) {
             serverLog('stderr: ' + data.toString());
           });
           runCode.on('close', (code) => {
-              serverLog(`child process exited with code ${code}`);            
+            serverLog(`child process exited with code ${code}`);
+            if(code!=0){
+              response.writeHead(200, {'content-type': 'text/plain'});
+              response.write('error');
+              response.end();
+            }
           });
           runCode.on('error', (err) => {
-            serverLog(err);
             serverLog('what is going on');
             serverLog(err);
           });

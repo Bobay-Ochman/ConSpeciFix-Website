@@ -57,7 +57,10 @@
            <div class="form-group">
             <select class="form-control" id="exampleSelect" ng-model="species">
               <option disabled> Choose Species </option>
-              <option value="Mycobacterium_africanum" >Mycobacterium africanum</option>
+              <option value="Gallibacterium_anatis" >Gallibacterium anatis</option>
+              <option value="Lactobacillus_crispatus" >Lactobacillus crispatus</option>
+              <option value="Porphyromonas_gingivalis" >Porphyromonas gingivalis</option>
+              <option value="Mycobacterium_colombiense" >Mycobacterium colombiense</option>
             </select>
           </div>  
           </div>
@@ -65,22 +68,51 @@
         </div>
 
         <div class="row">
-          <div class="col-sm-4"> &nbsp </div>
-          <div class="col-sm-4"> 
+          <div class="col-sm-3"> &nbsp </div>
+          <div class="col-sm-6"> 
             <input type="button" class="btn btn-default" ng-click="uploadFile()" value="Upload and Begin Comparison" />
           </div>
-          <div class="col-sm-4"> &nbsp </div>
+          <div class="col-sm-3"> &nbsp </div>
         </div>
           
-        
+   
     </div>
     <br>
-    <div ng-show="progress>-1"> progress: {{progress}}</div>
+    <div ng-show="progress>-1 && progress<100"> progress: {{progress}}%</div>
+     </center>  
+    <br>
+    <div ng-show="timeStamp==='error'">
+      <center>
+      <br>
+      <b>Uh-o! We've got a problem:</b>
+       </center>  
+      <br>
+      <div class="row">
+        <div class="col-sm-1"> &nbsp </div>
+        <div class="col-sm-10"> 
+          It seems we've encountered an issue with the file you gave us. No worries, this probably just means the file didn't upload properly. Give it another go and if it keeps up, give us a hollar at conspecifix@gmail.com and we'll see what we can do.
+        </div>
+        <div class="col-sm-1"> &nbsp </div>
+      </div>
+
+    </div>
     <div ng-show="timeStamp>0">
-        <span>hello! We have answers</span>
-        <br>
-        <br>
-        <span> an answer: </span> {{timeStamp}}
+    <div>
+      <center>
+      <hr width="70%" size="2">
+
+      <h2>{{species}}</h2>
+      <br>
+
+      <object data="efs/results/{{species}}/standardGraph.pdf" type="application/pdf" width="600px" height="600px"> 
+        <p>It appears you don't have a PDF plugin for this browser.
+         No biggie.</p>  
+      </object>
+      </center>
+      <br><br>
+      <p>
+        This is the default h/m graph for the species you have chosen to test against. We will send you the graph resulting from an analysis that includes your genome, as well as this one, as soon as it finishes to {{emailAtSubmit}} . This will take anywhere from a few hours to a little more than a day. To see some more about our process, look <a href="#!/process">here</a>.
+      </p>
     </div>
 
 </center>
