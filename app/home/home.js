@@ -78,7 +78,7 @@ angular.module('myApp.home', ['ngRoute'])
         var fd = new FormData()
         console.log($scope.files)
         for (var i in $scope.files) {
-            fd.append("uploadedFile", $scope.files[i])
+            fd.append("uploadedFile", $scope.files[i],$scope.files[i].name)
         }
         $scope.emailAtSubmit = $scope.email
         fd.append("email",$scope.email)

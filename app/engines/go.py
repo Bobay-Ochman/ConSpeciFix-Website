@@ -23,10 +23,6 @@ except:
 os.system('mv /var/app/current/'+folderPath + ' '+ '/var/app/current/efs/'+folderPath)
 os.chdir('/var/app/current/efs/ConSpeciFix/web/')
 
-os.system('mv /var/app/current/efs/'+path + ' /var/app/current/efs/'+path+'.fa')
-testGenome = str(fd)
-print 'all done with the easy stuff.'
-
 print 'About to start literally all of the analysis.'
 os.system('python runner.py '+ species +' '+testGenome+' '+ timestamp+' '+email+' &')
 print 'we have started the devil.'
