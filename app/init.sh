@@ -11,7 +11,7 @@ id
 sudo git clone "https://github.com/Bobay-Ochman/ConSpeciFix.git" /tmp/deployment/application/efs/ConSpeciFix
 
 #make sure everyone can use the use the scritps.
-sudo chmod -R 755 /tmp/deployment/application/efs/
+sudo chmod -R 755 /tmp/deployment/application/efs/*
 
 #give us MAFFT :D
 cd /tmp/deployment/application/efs/progs/mafft-folder/core

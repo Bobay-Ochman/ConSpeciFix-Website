@@ -24,5 +24,5 @@ os.system('mv /var/app/current/'+folderPath + ' '+ '/var/app/current/efs/'+folde
 os.chdir('/var/app/current/efs/ConSpeciFix/web/')
 
 print 'About to start literally all of the analysis.'
-os.system('python runner.py '+ species +' '+testGenome+' '+ timestamp+' '+email+' &')
+os.system('python runner.py '+ species +' '+str(fd)+' '+ timestamp+' '+email+' &')
 print 'we have started the devil.'
