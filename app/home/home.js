@@ -14,6 +14,7 @@ angular.module('myApp.home', ['ngRoute'])
     $scope.buttonMessage = 'Run Calculations!';
     $scope.uploadMessage = 'Select File';
     $scope.emailAtSubmit = '';
+    $scope.explore = false;
     $scope.timeStamp = 0
     $scope.submitted = false;
     var dropbox = document.getElementById("dropbox")
@@ -49,7 +50,7 @@ angular.module('myApp.home', ['ngRoute'])
             $scope.dropText = 'Drop files here...'
             $scope.dropClass = ''
         })
-        if(!$scope.submitted){
+        if(!$scope.submitted || $scope.timeStamp==='error'){
             var files = evt.dataTransfer.files
             if (files.length > 0) {
                 $scope.$apply(function(){
@@ -82,6 +83,7 @@ angular.module('myApp.home', ['ngRoute'])
         }
         $scope.emailAtSubmit = $scope.email
         fd.append("email",$scope.email)
+        fd.append("explore",$scope.explore)
         fd.append("species",$scope.species)
         console.log(fd.getAll('uploadedFile'))
         var xhr = new XMLHttpRequest()

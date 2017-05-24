@@ -84,9 +84,10 @@ var server = http.createServer(function(request, response) {
           console.log("We are about to do the thing!")
           var usersEmail = fields.email;
           var usersSpecies = fields.species;
+          var explore = fields.explore;
           console.log(usersEmail)
           console.log(usersSpecies)
-          const runCode = runSpawn('python',['engines/go.py',timeStamp,usersEmail,usersSpecies]);
+          const runCode = runSpawn('python',['engines/go.py',timeStamp,usersEmail,explore,usersSpecies]);
           runCode.stdout.on('data', function (data) {
             serverLog('stdout: ' + data.toString());
             if(data.toString().includes('we have started the devil.')){
