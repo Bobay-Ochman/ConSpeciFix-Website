@@ -2,3 +2,4 @@
 app/uploads/*
 dist/*
 app/efs/*
+app/emailCredentials.txt
