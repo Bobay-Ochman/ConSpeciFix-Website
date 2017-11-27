@@ -10,8 +10,7 @@ id
 #make sure we've got the most fresh copy of the scripts
 sudo git clone "https://github.com/Bobay-Ochman/ConSpeciFix.git" /tmp/deployment/application/efs/ConSpeciFix
 sudo git clone "https://github.com/Bobay-Ochman/ExploratoryPhase.git" /tmp/deployment/application/efs/ExploratoryPhase
-sudo wget -A.zip 'http://conspecifix-data-bucket.s3.amazonaws.com/results.zip' -P /tmp/deployment/application/efs/
-sudo unzip /tmp/deployment/application/efs/results.zip -d /tmp/deployment/application/efs
+
 #make sure everyone can use the use the scritps.
 sudo chmod -R 755 /tmp/deployment/application/efs/*
 
