@@ -1,0 +1,66 @@
+
+
+<H1><center>Using ConSpeciFix</center></H1>
+<h2>Purpose</h2>
+The purpose of this server is to provide users with access to two species-identification tools we have developed. The first is the <b>ConSpeciFix</b> process, which takes as input a sample genome, and tests its recombination frequency with a candidate species. The second is the <b>Exploratory Phase</b> which, when given a genome, can report which species this sample is closest to based on DNA similarity. This second process can be used to generate a predicted candidate species that can be tested in the full ConSpeciFix Process. A full explanation of the ConSpeciFix Process can be found <a href="#!/process">here</a>.
+<br><br>
+The following instructions apply to both species identification tools hosted on this server, as they have been designed to be operated by the same interface. You select which tool to use when submitting your genome.
+<br><br>
+
+For multiple files, or to run this analysis locally, please see our <a target="_blank" href="http://www.github.com/Bobay-Ochman">GitHub</a>.
+<h2> Preparing your data</h2>
+The file you upload must adhear to the <a target="_blank" href="http://www.bioinformatics.nl/tools/crab_fasta.html"> FASTA </a> format. In order for us to analyze your genome, there are a few requirements imposed on the file beyond that of the default FASTA format. The file must:
+<ul>
+<li> Contain nucleotide data, not protein data.</li>
+<li> Identify genes by seperating them into distinct sequences. Sequences should not contain large sections of genome (what is the other way these things might be formatted? when you get them from shotgun sequencing?) </li>
+<li> Contain data for only one genome.</li>
+<li> (Anything else you would like me to add?)</li>
+</ul>
+Some examples of acceptable files (originating from NCBI) can be found here:
+<ul>
+<li> <a target="_blank" href="/res/exampleFiles/Acetobacter_pasteurianus.fa">Acetobacter pasteurianus</a> </li>
+<li> <a target="_blank" href="/res/exampleFiles/Bacillus_megaterium.fa">Bacillus megaterium</a> </li>
+<li> <a target="_blank" href="/res/exampleFiles/Vibrio_campbellii.fa">Vibrio campbellii</a> </li>
+</ul>
+
+<h2> Submitting for analysis</h2>
+<ul>
+	<li> <b> Upload your data: </b> begin by draging and droping your prepared FASTA file into the file upload field. Additionally, provide us with an email where we can send the results of your analysis. This drag and drop will only work on Chrome and Firefox, so please use one of these browsers when utilizing this tool.</li> 
+    <li> <b> Tell us what you know: </b> select the candidate species you would like to test your genome against. If you do not know which candidate species to test against, you can search for the most likely species by selecting "Submit genome for Exploratory Phase". This process will identify the most likely candidate species through DNA similarity, after which you can submit your genome again for a full recombination-based species classification. </li>
+    <li> <b> Get Answers: </b> you will receive an email when the results are ready, usually in a matter of hours.</li>
+    <li> <b> Interpret Results: </b> look <a href="/#!/results"> here</a> for some tips about interpreting the results emailed to you.
+</ul>
+
+<h2> Common Errors</h2>
+ 
+Occasionally instead of your results, your email from ConSpeciFix might contain a message reading "The file you have uploaded appears to not be in the proper format... An error log is listed below." There are a few categories of errors that are reported in this way.
+<br>
+<br>
+<div class="well">
+Error: too few genes to compare. Please separate into genes as per the FASTA format. Number of genes identified: ###
+</div>
+
+This occurs when ten or fewer genes are identified in your FASTA file. The ConSpeciFix process works best on complete genomes separated into genes. If you have more genomic data, append it to your FASTA file and submit the file again.
+
+<br>
+<br>
+<br>
+<div class="well">
+Error: longest gene is > 30kbp. Are your genes annotated? Max len: ###
+</div>
+
+This occurs when a sequence of DNA identified as a gene in the FASTA file is larger than 30kbp. As ConSpeciFix is intended to function on prokaryote species, genes larger than this size are generally an indication that the FASTA file is not actually separated by gene, but rather contains unannotated segments of the genome. Information on how to accomplish this can be found online, and can normally be completed using tools such as (link to tool that might use it)
+<br>
+<br>
+<br>
+
+<div class="well">
+Error: too many non-nucleotide character in file: #### non-nucleotide to #### total
+</div>
+
+This occurs when characters other than A, T, G, C, -, or N appear as more than 10% of your  upload in the sequence section of the FASTA file. (Gene annotation labels do not count toward this limit.) This typically is due to using protein labels being used instead of nucleotide labels. Converting to nucleotide data can be done easily online with tools such as (link to online tools)
+
+
+
+
+

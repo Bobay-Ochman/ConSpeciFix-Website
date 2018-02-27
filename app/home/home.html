@@ -56,8 +56,10 @@
            <div class="form-group">
             <select class="form-control" ng-disabled="(submitted && timeStamp!='error')||explore"  id="exampleSelect" ng-model="species">
               <option disabled> Choose Species </option>
+              <option value="Acetobacter_pasteurianus">Acetobacter pasteurianus</option>
               <option value="Achromobacter_xylosoxidans">Achromobacter xylosoxidans</option>
               <option value="Acinetobacter_calcoaceticus">Acinetobacter calcoaceticus</option>
+              <option value="Acinetobacter_pittii">Acinetobacter pittii</option>
               <option value="Actinobacillus_pleuropneumoniae">Actinobacillus pleuropneumoniae</option>
               <option value="Actinomyces_naeslundii">Actinomyces naeslundii</option>
               <option value="Actinomyces_oris">Actinomyces oris</option>
@@ -66,75 +68,149 @@
               <option value="Aliivibrio_fischeri">Aliivibrio fischeri</option>
               <option value="Alteromonas_mediterranea">Alteromonas mediterranea</option>
               <option value="Anaplasma_phagocytophilum">Anaplasma phagocytophilum</option>
+              <option value="Bacillus_amyloliquefaciens">Bacillus amyloliquefaciens</option>
+              <option value="Bacillus_anthracis">Bacillus anthracis</option>
+              <option value="Bacillus_atrophaeus">Bacillus atrophaeus</option>
               <option value="Bacillus_coagulans">Bacillus coagulans</option>
+              <option value="Bacillus_licheniformis">Bacillus licheniformis</option>
               <option value="Bacillus_megaterium">Bacillus megaterium</option>
               <option value="Bacillus_pumilus">Bacillus pumilus</option>
+              <option value="Bacillus_subtilis">Bacillus subtilis</option>
               <option value="Bacillus_velezensis">Bacillus velezensis</option>
+              <option value="Bacillus_weihenstephanensis">Bacillus weihenstephanensis</option>
               <option value="Bacteroides_ovatus">Bacteroides ovatus</option>
               <option value="Bacteroides_uniformis">Bacteroides uniformis</option>
               <option value="Bartonella_henselae">Bartonella henselae</option>
               <option value="Bifidobacterium_bifidum">Bifidobacterium bifidum</option>
               <option value="Bifidobacterium_longum">Bifidobacterium longum</option>
               <option value="Bifidobacterium_pseudocatenulatum">Bifidobacterium pseudocatenulatum</option>
+              <option value="Bordetella_bronchiseptica">Bordetella bronchiseptica</option>
               <option value="Borrelia_burgdorferi">Borrelia burgdorferi</option>
               <option value="Borrelia_garinii">Borrelia garinii</option>
               <option value="Brachyspira_hyodysenteriae">Brachyspira hyodysenteriae</option>
               <option value="Bradyrhizobium_japonicum">Bradyrhizobium japonicum</option>
+              <option value="Buchnera_aphidicola">Buchnera aphidicola</option>
+              <option value="Burkholderia_cenocepacia">Burkholderia cenocepacia</option>
+              <option value="Burkholderia_cepacia">Burkholderia cepacia</option>
               <option value="Burkholderia_multivorans">Burkholderia multivorans</option>
+              <option value="Burkholderia_stagnalis">Burkholderia stagnalis</option>
+              <option value="Burkholderia_ubonensis">Burkholderia ubonensis</option>
+              <option value="Chlamydia_trachomatis">Chlamydia trachomatis</option>
+              <option value="Clostridium_beijerinckii">Clostridium beijerinckii</option>
               <option value="Clostridium_butyricum">Clostridium butyricum</option>
               <option value="Clostridium_perfringens">Clostridium perfringens</option>
               <option value="Clostridium_sporogenes">Clostridium sporogenes</option>
               <option value="Comamonas_testosteroni">Comamonas testosteroni</option>
+              <option value="Corynebacterium_diphtheriae">Corynebacterium diphtheriae</option>
+              <option value="Corynebacterium_glutamicum">Corynebacterium glutamicum</option>
+              <option value="Corynebacterium_jeikeium">Corynebacterium jeikeium</option>
+              <option value="Corynebacterium_ulcerans">Corynebacterium ulcerans</option>
               <option value="Cronobacter_sakazakii">Cronobacter sakazakii</option>
+              <option value="Cutibacterium_acnes">Cutibacterium acnes</option>
               <option value="Elizabethkingia_anophelis">Elizabethkingia anophelis</option>
+              <option value="Enterobacter_aerogenes">Enterobacter aerogenes</option>
+              <option value="Enterobacter_asburiae">Enterobacter asburiae</option>
+              <option value="Enterobacter_hormaechei">Enterobacter hormaechei</option>
+              <option value="Enterococcus_faecalis">Enterococcus faecalis</option>
               <option value="Escherichia_albertii">Escherichia albertii</option>
+              <option value="Flavobacterium_psychrophilum">Flavobacterium psychrophilum</option>
               <option value="Fusobacterium_necrophorum">Fusobacterium necrophorum</option>
               <option value="Fusobacterium_nucleatum">Fusobacterium nucleatum</option>
+              <option value="Gallibacterium_anatis">Gallibacterium anatis</option>
               <option value="Gardnerella_vaginalis">Gardnerella vaginalis</option>
+              <option value="Gilliamella_apicola">Gilliamella apicola</option>
               <option value="Haemophilus_parainfluenzae">Haemophilus parainfluenzae</option>
               <option value="Haemophilus_parasuis">Haemophilus parasuis</option>
               <option value="Helicobacter_pullorum">Helicobacter pullorum</option>
               <option value="Kingella_kingae">Kingella kingae</option>
+              <option value="Klebsiella_michiganensis">Klebsiella michiganensis</option>
+              <option value="Klebsiella_quasipneumoniae">Klebsiella quasipneumoniae</option>
+              <option value="Klebsiella_variicola">Klebsiella variicola</option>
               <option value="Lactobacillus_aviarius">Lactobacillus aviarius</option>
               <option value="Lactobacillus_brevis">Lactobacillus brevis</option>
+              <option value="Lactobacillus_crispatus">Lactobacillus crispatus</option>
               <option value="Lactobacillus_delbrueckii">Lactobacillus delbrueckii</option>
+              <option value="Lactobacillus_gasseri">Lactobacillus gasseri</option>
+              <option value="Lactobacillus_helveticus">Lactobacillus helveticus</option>
               <option value="Lactobacillus_iners">Lactobacillus iners</option>
               <option value="Lactobacillus_kunkeei">Lactobacillus kunkeei</option>
               <option value="Lactobacillus_reuteri">Lactobacillus reuteri</option>
+              <option value="Lactobacillus_rhamnosus">Lactobacillus rhamnosus</option>
+              <option value="Lactobacillus_salivarius">Lactobacillus salivarius</option>
+              <option value="Lactococcus_lactis">Lactococcus lactis</option>
+              <option value="Leptospira_kirschneri">Leptospira kirschneri</option>
               <option value="Leptospira_noguchii">Leptospira noguchii</option>
+              <option value="Lysinibacillus_sphaericus">Lysinibacillus sphaericus</option>
               <option value="Mesorhizobium_loti">Mesorhizobium loti</option>
+              <option value="Micrococcus_luteus">Micrococcus luteus</option>
+              <option value="Microcystis_aeruginosa">Microcystis aeruginosa</option>
+              <option value="Moraxella_catarrhalis">Moraxella catarrhalis</option>
+              <option value="Morganella_morganii">Morganella morganii</option>
+              <option value="Mycobacterium_africanum">Mycobacterium africanum</option>
+              <option value="Mycobacterium_avium">Mycobacterium avium</option>
+              <option value="Mycobacterium_chelonae">Mycobacterium chelonae</option>
+              <option value="Mycobacterium_colombiense">Mycobacterium colombiense</option>
+              <option value="Mycobacterium_fortuitum">Mycobacterium fortuitum</option>
+              <option value="Mycobacterium_kansasii">Mycobacterium kansasii</option>
+              <option value="Mycoplasma_bovis">Mycoplasma bovis</option>
+              <option value="Porphyromonas_gingivalis">Porphyromonas gingivalis</option>
+              <option value="Prochlorococcus_marinus">Prochlorococcus marinus</option>
+              <option value="Propionibacterium_freudenreichii">Propionibacterium freudenreichii</option>
+              <option value="Pseudoalteromonas_luteoviolacea">Pseudoalteromonas luteoviolacea</option>
+              <option value="Pseudomonas_amygdali">Pseudomonas amygdali</option>
+              <option value="Pseudomonas_chlororaphis">Pseudomonas chlororaphis</option>
+              <option value="Pseudomonas_denitrificans">Pseudomonas denitrificans</option>
               <option value="Pseudomonas_fluorescens">Pseudomonas fluorescens</option>
               <option value="Pseudomonas_protegens">Pseudomonas protegens</option>
+              <option value="Pseudomonas_putida">Pseudomonas putida</option>
+              <option value="Pseudomonas_stutzeri">Pseudomonas stutzeri</option>
               <option value="Pseudomonas_syringae">Pseudomonas syringae</option>
+              <option value="Raoultella_ornithinolytica">Raoultella ornithinolytica</option>
               <option value="Rhizobium_leguminosarum">Rhizobium leguminosarum</option>
               <option value="Rhodococcus_erythropolis">Rhodococcus erythropolis</option>
+              <option value="Rhodococcus_fascians">Rhodococcus fascians</option>
+              <option value="Rothia_mucilaginosa">Rothia mucilaginosa</option>
+              <option value="Ruegeria_mobilis">Ruegeria mobilis</option>
               <option value="Salinispora_pacifica">Salinispora pacifica</option>
+              <option value="Serratia_marcescens">Serratia marcescens</option>
+              <option value="Sinorhizobium_meliloti">Sinorhizobium meliloti</option>
               <option value="Staphylococcus_argenteus">Staphylococcus argenteus</option>
+              <option value="Staphylococcus_epidermidis">Staphylococcus epidermidis</option>
+              <option value="Staphylococcus_equorum">Staphylococcus equorum</option>
               <option value="Staphylococcus_hominis">Staphylococcus hominis</option>
               <option value="Stenotrophomonas_maltophilia">Stenotrophomonas maltophilia</option>
               <option value="Streptobacillus_moniliformis">Streptobacillus moniliformis</option>
               <option value="Streptococcus_anginosus">Streptococcus anginosus</option>
               <option value="Streptococcus_cristatus">Streptococcus cristatus</option>
+              <option value="Streptococcus_dysgalactiae">Streptococcus dysgalactiae</option>
+              <option value="Streptococcus_equi">Streptococcus equi</option>
               <option value="Streptococcus_equinus">Streptococcus equinus</option>
               <option value="Streptococcus_gallolyticus">Streptococcus gallolyticus</option>
+              <option value="Streptococcus_gordonii">Streptococcus gordonii</option>
               <option value="Streptococcus_parasanguinis">Streptococcus parasanguinis</option>
               <option value="Streptococcus_parauberis">Streptococcus parauberis</option>
               <option value="Streptococcus_pseudopneumoniae">Streptococcus pseudopneumoniae</option>
               <option value="Streptococcus_pyogenes">Streptococcus pyogenes</option>
+              <option value="Streptococcus_salivarius">Streptococcus salivarius</option>
               <option value="Streptococcus_sanguinis">Streptococcus sanguinis</option>
+              <option value="Streptomyces_griseus">Streptomyces griseus</option>
               <option value="Streptomyces_rimosus">Streptomyces rimosus</option>
               <option value="Sulfolobus_islandicus">Sulfolobus islandicus</option>
               <option value="Treponema_denticola">Treponema denticola</option>
               <option value="Tropheryma_whipplei">Tropheryma whipplei</option>
+              <option value="Variovorax_paradoxus">Variovorax paradoxus</option>
               <option value="Vibrio_anguillarum">Vibrio anguillarum</option>
               <option value="Vibrio_campbellii">Vibrio campbellii</option>
               <option value="Vibrio_crassostreae">Vibrio crassostreae</option>
               <option value="Vibrio_cyclitrophicus">Vibrio cyclitrophicus</option>
+              <option value="Vibrio_harveyi">Vibrio harveyi</option>
               <option value="Vibrio_nigripulchritudo">Vibrio nigripulchritudo</option>
               <option value="Vibrio_splendidus">Vibrio splendidus</option>
               <option value="Vibrio_vulnificus">Vibrio vulnificus</option>
               <option value="Wolbachia_endosymbiont">Wolbachia endosymbiont</option>
+              <option value="Xanthomonas_albilineans">Xanthomonas albilineans</option>
               <option value="Xanthomonas_arboricola">Xanthomonas arboricola</option>
+              <option value="Xanthomonas_axonopodis">Xanthomonas axonopodis</option>
             </select>
           </div>  
           </div>
@@ -148,9 +224,12 @@
         </div>
         <br>
         <div class="row">
-          <div class="col-sm-3"> &nbsp </div>
+          <div class="col-sm-3"> &nbsp</div>
           <div class="col-sm-6"> 
-            <input type="button" ng-disabled="submitted&& timeStamp!='error'" class="btn btn-default" ng-click="uploadFile()" value="Upload and Begin" />
+            <input type="button" ng-disabled="(submitted && timeStamp!='error')
+                || (email == None || email == '')
+                || files.length == 0
+                || (species==None && explore==false)" class="btn btn-default" ng-click="uploadFile()" value="Upload and Begin" />
           </div>
           <div class="col-sm-3"> &nbsp </div>
         </div>

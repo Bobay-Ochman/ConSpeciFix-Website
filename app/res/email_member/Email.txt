@@ -1,0 +1,4 @@
+From: conspecifix@gmail.comSubject: Update on your File! id:1512768359251Date: December 8, 2017 at 5:27 PM
+To: brian.e2014@gmail.com----
+
+Hello!Here are the results of your comparison.Average Identity Score relative to other members of species: 74.29%Number of core genes orthologous to your genome: 3Member of Achromobacter_xylosoxidans according to Exclusion Criterion*: yes*Please refer to Bobay & Ochman, GBE 2017Thanks,The ConSpeciFix TeamThis message is in regards to the file uploaded on 2017-12-08 21:25:59.251000 Species testing against: Achromobacter_xylosoxidans

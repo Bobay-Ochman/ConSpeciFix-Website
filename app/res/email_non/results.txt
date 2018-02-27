@@ -1,0 +1,42 @@
+Conspecifix Results:
+
+	Completed on: 2018-01-30 16:26:35
+
+	For more information about our process, please visit our website at
+	https://www.conspecifix.com
+	or take a look at our github
+	https://github.com/Bobay-Ochman
+
+	Exclusion Criterion defined in Bobay & Ochman, GBE 2017
+	
+
+The following strains are members of the species:
+GCF_001541505.1_ASM154150v1_genomic.fa
+GCF_000162315.1_ASM16231v1_genomic.fa
+GCF_000301135.1_Lact_cris_FB077-07_V1_genomic.fa
+GCF_001563615.1_ASM156361v1_genomic.fa
+GCF_001541535.1_ASM154153v1_genomic.fa
+GCF_000165885.1_ASM16588v1_genomic.fa
+GCF_000162255.1_ASM16225v1_genomic.fa
+GCF_001541385.1_ASM154138v1_genomic.fa
+GCF_001541585.1_ASM154158v1_genomic.fa
+GCF_001541515.1_ASM154151v1_genomic.fa
+GCF_001311685.1_ASM131168v1_genomic.fa
+GCF_001541405.1_ASM154140v1_genomic.fa
+GCF_001567095.1_ASM156709v1_genomic.fa
+GCF_000176975.2_ASM17697v2_genomic.fa
+GCF_000091765.1_ASM9176v1_genomic.fa
+GCF_000161915.2_Lacto_cris_MV-1A-US_V2_genomic.fa
+GCF_000301115.1_Lact_cris_FB049-03_V1_genomic.fa
+GCF_000160515.1_ASM16051v1_genomic.fa
+GCF_001700475.1_ASM170047v1_genomic.fa
+GCF_000177575.1_ASM17757v1_genomic.fa
+GCF_000466885.2_ASM46688v2_genomic.fa
+GCF_001546025.1_ASM154602v1_genomic.fa
+GCF_000497065.1_L.crispatus1.0_genomic.fa
+GCF_001704465.1_ASM170446v1_genomic.fa
+GCF_001434005.1_ASM143400v1_genomic.fa
+GCF_001546015.1_ASM154601v1_genomic.fa
+
+The following strains were determined to NOT be a member of the species:
+upload_963b62f49f6c92fbd7568bc073265e24.fa

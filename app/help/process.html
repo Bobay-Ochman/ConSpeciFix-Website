@@ -1,0 +1,88 @@
+
+
+<H1><center>Our Process</center></H1>
+<h2>Overview</h2>
+The full ConSpeciFix process provides a predicted species for a single candidate genome, uploaded in the form of a FASTA file, compared against a pre-processed species you select. It does so by returning to you an email detailing the <i>h/m</i> ratio among that of established members of the species, both with and without your candidate genome. By comparing these two data sets, we also provide you with a determination of whether or not the candidate genome is a member of the species based on gene flow.
+<h2>Database Preparation</h2>
+
+<center>
+	<a target="_blank" href="res/database.jpg">
+<img src='res/database.jpg' width="100" height="159"></a>
+<br>
+<i>click to enlarge</i>
+</center>
+<br>
+
+The database that provides the species samples for the ConSpeciFix Process has been pre-processed to allow for user samples to run more quickly. The process that prepared this database for use is as follows for all species on NCBI with more than 15 genome samples:
+<br><br>
+<ul>
+<li>Download all genomes from NCBI for comparison, and using the provided gene annotations, convert .fna and .gff files into the FASTA format
+</li>
+<li>Identify orthologous genes using <a target="_blank" href="https://www.drive5.com/usearch/">USEARCH</a> and <a target="_blank" href="https://www.micans.org/mcl/index.html">MCL</a>. 
+</li>
+<li>Using this list of orthologous genes, determine which genes become part of the core genome, and align the genes from these different genomes using <a target="_blank" href="http://mafft.cbrc.jp/alignment/software/">MAFFT</a>. From this, we can produce a core genome.
+</li>
+<li>Calculate the distance between each strain using <a target="_blank" href="https://sco.h-its.org/exelixis/web/software/raxml/index.html"> RAxML</a>.
+</li>
+<li>Use this distance to compute <i> h/m</i> ratios for random samples of differing sizes.</li>
+<li>Use <i> h/m</i> ratios to produce a "control" graph for the species.
+</li>
+</ul>
+This database has been built for all species on NCBI that meet the criteria listed above, and will be expanded as more species become available. 
+
+<h2>User Upload Process</h2>
+
+<center>
+	<a target="_blank" href="res/upload.jpg">
+<img src='res/upload.jpg' width="100" height="159"></a>
+<br>
+<i>click to enlarge</i>
+</center>
+<br>
+
+Once a user has uploaded their genome, it can be compared against the database for any species. This comparison process includes:
+<br><br>
+<ul>
+<li>Identifying orthologous genes between the user uploaded genome and the genomes in the database.
+</li>
+<li>The core genome of the species is updated to reflect the additional genome.
+</li>
+<li>The distance between every strain is calculated using RAxML.
+</li>
+<li>Use this distance to compute <i> h/m</i> ratios for random samples of differing sizes, this time including the uploaded genome.
+</li>
+<li>Use <i> h/m</i> ratios to produce a "test" graph for the species, including data for the test genome.
+</li>
+<li>An email is generated containing graphs and associated statistics that is sent to the user.</li>
+</ul>
+
+<br>
+For details on implementation, please inspect our <a target="_blank" href="https://github.com/Bobay-Ochman/ConSpeciFix"> github.</a> For details about the method, please see:
+<br>
+<br>
+<div class="well">
+Bobay LM, Ochman H. Biological species are universal across life's domains. Genome Biol Evol. 2017. doi: 10.1093/gbe/evx026.
+</div>
+
+<style>
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 477px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 960px) {
+    .column {
+        width: 100%;
+    }
+}
+</style>

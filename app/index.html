@@ -19,13 +19,12 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://npmcdn.com/react@15.3.0/dist/react-with-addons.min.js"></script>
   <script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js"></script>
-  
-  <script src='http://www.midijs.net/lib/midi.js'></script>
-  
+    
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 <body>
+
 
 
 
@@ -39,14 +38,24 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Home</a>
+      <a class="navbar-brand" href="#">ConSpeciFix</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="#!/process">Our Process</a></li>
         <li><a href="#!/people">Our People</a></li>
+
+         <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle">Help</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#!/usage">Usage</a></li>
+                        <li><a href="#!/process">Process Details</a></li>
+                        <li><a href="#!/results">Interpreting Results</a></li>
+                    </ul>
+                </li>
+
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a target="_blank" href="http://www.github.com/Bobay-Ochman">Our GitHub</a></li>
@@ -89,7 +98,9 @@
   <script src="webApp.js"></script>
   <script src="home/home.js"></script>
   <script src="people/people.js"></script>
-  <script src="process/process.js"></script>
+  <script src="help/usage.js"></script>
+  <script src="help/process.js"></script>
+  <script src="help/results.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>

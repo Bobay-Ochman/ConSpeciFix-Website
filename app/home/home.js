@@ -18,14 +18,14 @@ angular.module('myApp.home', ['ngRoute'])
     $scope.timeStamp = 0
     $scope.submitted = false;
     var dropbox = document.getElementById("dropbox")
-    $scope.dropText = 'Drop files here...'
+    $scope.dropText = 'Drop file here...'
 
     // init event handlers
     function dragEnterLeave(evt) {
         evt.stopPropagation()
         evt.preventDefault()
         $scope.$apply(function(){
-            $scope.dropText = 'Drop files here...'
+            $scope.dropText = 'Drop file here...'
             $scope.dropClass = ''
         })
     }
@@ -47,7 +47,7 @@ angular.module('myApp.home', ['ngRoute'])
         evt.stopPropagation()
         evt.preventDefault()
         $scope.$apply(function(){
-            $scope.dropText = 'Drop files here...'
+            $scope.dropText = 'Drop file here...'
             $scope.dropClass = ''
         })
         if(!$scope.submitted || $scope.timeStamp==='error'){
@@ -55,7 +55,7 @@ angular.module('myApp.home', ['ngRoute'])
             if (files.length > 0) {
                 $scope.$apply(function(){
                     $scope.files = []
-                    for (var i = 0; i < files.length; i++) {
+                    for (var i = 0; i < files.length && i < 1; i++) {
                         $scope.files.push(files[i])
                     }
                 })

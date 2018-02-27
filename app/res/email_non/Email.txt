@@ -1,0 +1,9 @@
+From: conspecifix@gmail.comSubject: Update on your File! id:1517327300478Date: January 30, 2018 at 10:26 AM
+To: your@email.com
+----
+Hello!Here are the results of your comparison.
+Average Identity Score relative to other members of species: 72.915%
+Number of core genes orthologous to your genome: 49
+Member of Lactobacillus_crispatus according to Exclusion Criterion*: no
+
+*Please refer to Bobay & Ochman, GBE 2017Thanks,The ConSpeciFix TeamThis message is in regards to the file uploaded on 2018-01-30 15:48:20.478000 Species testing against: Lactobacillus_crispatus

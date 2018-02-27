@@ -1,0 +1,49 @@
+Conspecifix Results:
+
+	Completed on: 2017-12-08 23:27:27
+
+	For more information about our process, please visit our website at
+	https://www.conspecifix.com
+	or take a look at our github
+	https://github.com/Bobay-Ochman
+
+	Exclusion Criterion defined in Bobay & Ochman, GBE 2017
+	
+
+The following strains are members of the species:
+GCF_001276035.1_ASM127603v1_genomic.fa
+GCF_001541435.1_ASM154143v1_genomic.fa
+GCF_000783435.1_ASM78343v1_genomic.fa
+GCA_001558915.1_ASM155891v1_genomic.fa
+GCF_001057605.1_ASM105760v1_genomic.fa
+GCF_001957065.1_ASM195706v1_genomic.fa
+GCF_001957055.1_ASM195705v1_genomic.fa
+GCF_001558755.1_ASM155875v1_genomic.fa
+GCF_000758265.1_ASM75826v1_genomic.fa
+GCF_000517225.1_X02736v1_genomic.fa
+GCF_001654705.1_ASM165470v1_genomic.fa
+GCF_001275845.1_ASM127584v1_genomic.fa
+GCF_001276315.1_ASM127631v1_genomic.fa
+GCF_001457475.1_NCTC10807_genomic.fa
+GCF_001275875.1_ASM127587v1_genomic.fa
+GCF_001641525.1_ASM164152v1_genomic.fa
+GCF_001707475.1_ASM170747v1_genomic.fa
+GCF_001707485.1_ASM170748v1_genomic.fa
+GCF_001276005.1_ASM127600v1_genomic.fa
+GCF_000165835.1_ASM16583v1_genomic.fa
+GCF_001707535.1_ASM170753v1_genomic.fa
+GCF_001057595.1_ASM105759v1_genomic.fa
+GCF_001566985.1_ASM156698v1_genomic.fa
+GCF_001957045.1_ASM195704v1_genomic.fa
+GCF_001471535.1_ASM147153v1_genomic.fa
+GCA_001559195.1_ASM155919v1_genomic.fa
+GCF_001051055.1_ASM105105v1_genomic.fa
+GCF_001598595.1_ASM159859v1_genomic.fa
+GCF_001276025.1_ASM127602v1_genomic.fa
+GCF_000967095.2_A.x.NH44784-1996_genomic.fa
+GCF_001038045.1_ASM103804v1_genomic.fa
+GCF_000186185.1_Achr_xylo_C54_V2_genomic.fa
+GCF_001275865.1_ASM127586v1_genomic.fa
+upload_2e165f71e0bc90e4492b2b980571479d.fa
+
+All strains were determined to be a member of the species
