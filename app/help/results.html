@@ -4,20 +4,20 @@
 <br>
 The email with your results will contain four files:
 <ul>
-	<li>An <i>h/m</i> ratio graph testing your strain against the species</li>
-	<li>An <i>h/m</i> ratio graph of the species without your strain</li>
-	<li>A box plot comparing the the <i>h/m</i> ratios</li>
+	<li>An <i>h/m</i> ratio graph estimating gene flow between your candidate genome and randomly sampled strains of the selected species</li>
+	<li>An <i>h/m</i> ratio graph estimating gene flow between randomly sampled strains of the selected species without your candidate genome</li>
+	<li>A box plot comparing <i>h/m</i> ratios with and without your candidate genome</li>
 	<li>The plain-text output of the ConSpeciFix program</li>
 </ul>
 
-Along with a message simmilar to:
+Along with a message similar to:
 <br>
 <div class="well">
 Hello!
 <br>
 <br>Here are the results of your comparison.
 <br>
-<br>Average Identity Score relative to other members of species: ##.###%
+<br>Average Identity Score relative to other members of the species: ##.###%
 <br>Number of core genes orthologous to your genome: ###
 <br>Member of (Species_name) according to Exclusion Criterion*: <b>(yes/no)</b>
 <br>
@@ -30,28 +30,28 @@ Hello!
 <br>Species testing against: (Species_name)
 </div>
 
-Text and attachments of an email showing that the uploaded strain is a member of the selected species can be found <a target="_blank" href="res/email_member_of_species.zip"> here</a>, while components showing a negative indication can be found <a target="_blank" href="res/email_non_member_of_species.zip">here</a>. 
+Text and attachments of an email showing that the uploaded genome is a member of the selected species can be found <a target="_blank" href="res/email_member_of_species.zip"> here</a>, while components showing a negative indication can be found <a target="_blank" href="res/email_non_member_of_species.zip">here</a>. 
 
 <h2> Beyond a yes / no answer</h2>
-An <i>h/m</i> ratio graph for a collection of strains all of which show evidence of recombining looks similar to the one below. It has a positive slope, occasionally will have a plateau, and the standard deviation of the points at any one particular sample size is relatively small.
+An <i>h/m</i> ratio graph for a collection of genomes all of which show evidence of gene flow looks similar to the one below. It has a positive slope, typically reaches a plateau, and the standard deviation is relatively small.
 <br>
 <center><img src="res/Bifidobacterium_bifidum.png" height = "400px" width = "400px"></center>
-Every species graph additionally contains two horizontal red lines. These are the average (lower line) and highest observed (upper) <i> h/m</i> ratios for simulated mutation without recombination. If a species' <i>h/m</i> graph were to not cross above these lines, it would be indicative of a clonal species without recombination.
+Every species graph additionally contains two horizontal red lines. These are the average (lower line) and highest observed (upper) <i> h/m</i> ratios for simulated genomes evolved <i>in silico</i> without recombination. If a species' <i>h/m</i> graph plateaus within these lines, it would be indicative of a clonal species (no significant signal of recombination has been detected).
 <br>
 The gallery of every <i>h/m</i> graph for each species processed and available on this server can be downloaded <a target="_blank" href="https://s3.us-east-2.amazonaws.com/conspecifix-data-bucket/figures.zip">here</a>.
 <br>
 <br>
-However, if a strain is introduced into the population that does not recombine at a similar rate to the other strains, the graph will feature a sharp drop, as well as a very wide standard deviation as seen below.
+However, if your candidate genome engages in gene flow at a much lower rate than the other members of the species, the graph will feature a sharp drop, as well as a wide standard deviation as seen below.
 <br>
 <center><img src="res/email_non/testGraph.jpg" height="400px" width = "400px"></center>
 <br>
-This drop is due to that, as random samples grow larger in size, so does the likelihood they will contain the strain that does not recombine.
+This drop is due to that, as the number of randomly sampled genomes grow larger in size, so does the likelihood they will contain the sexually isolated genome.
 <br>
-The box plot furthers this examination as, if the <i>h/m</i> values are similar between all samples not including the test strain, and all samples with the test strain, then they can be said to recombine at a similar high rate and be considered members of the same species. 
+The box plot furthers this examination as, if the <i>h/m</i> values are similar between all samples not including the candidate genome, and all samples with the candidate genome, then they can be said to engage in gene flow at a similar rate and be considered members of the same species. 
 <br>
 <center><img src="res/email_member/boxPlot.jpg" height="400px" width = "400px"></center>
 <br>
-If however, the box plots show very different values for the samples with established members of the species on their own versus the samples including the test strain, then we can determine that the strains do not recombine at similar high rates and are thus not members of the same species.
+If, however, the box plots show very different values for the samples with established members of the species on their own versus the samples including the candidate genome, then we can conclude that these genomes do not recombine at similar rates and are thus not members of the same species.
 <br>
 <center><img src="res/email_non/boxPlot.jpg" height="400px" width = "400px"></center>
 <br>

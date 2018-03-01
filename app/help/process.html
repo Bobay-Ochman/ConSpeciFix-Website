@@ -2,8 +2,8 @@
 
 <H1><center>Our Process</center></H1>
 <h2>Overview</h2>
-The full ConSpeciFix process provides a predicted species for a single candidate genome, uploaded in the form of a FASTA file, compared against a pre-processed species you select. It does so by returning to you an email detailing the <i>h/m</i> ratio among that of established members of the species, both with and without your candidate genome. By comparing these two data sets, we also provide you with a determination of whether or not the candidate genome is a member of the species based on gene flow.
-<h2>Database Preparation</h2>
+The ConSpeciFix process tests candidate genomes for species membership against a pre-processed species database. ConSpeciFix infers whether or not the candidate genome is engaging in gene flow with the selected species. It does so by returning to you an email detailing gene flow metrics (<i>h/m</i> ratio) estimated both with and without your candidate genome. Candidate genomes must be uploaded in the form of a multi-FASTA file including all (or some) genes of the genome (in nucleotides).
+<h2>Our Database</h2>
 
 <center>
 	<a target="_blank" href="res/database.jpg">
@@ -13,24 +13,24 @@ The full ConSpeciFix process provides a predicted species for a single candidate
 </center>
 <br>
 
-The database that provides the species samples for the ConSpeciFix Process has been pre-processed to allow for user samples to run more quickly. The process that prepared this database for use is as follows for all species on NCBI with more than 15 genome samples:
+The database that provides the species samples for the ConSpeciFix analysis has been pre-processed for efficiency. The database includes all species available on NCBI with more than 15 genomes (last update: October 2017):
 <br><br>
 <ul>
-<li>Download all genomes from NCBI for comparison, and using the provided gene annotations, convert .fna and .gff files into the FASTA format
+<li>Download of all complete and annotated genomes from NCBI. Protein coding genes are extracted and converted from .fna and .gff files into the FASTA format
 </li>
-<li>Identify orthologous genes using <a target="_blank" href="https://www.drive5.com/usearch/">USEARCH</a> and <a target="_blank" href="https://www.micans.org/mcl/index.html">MCL</a>. 
+<li>Identification of orthologous gene families using <a target="_blank" href="https://www.drive5.com/usearch/">USEARCH</a> and <a target="_blank" href="https://www.micans.org/mcl/index.html">MCL</a>. 
 </li>
-<li>Using this list of orthologous genes, determine which genes become part of the core genome, and align the genes from these different genomes using <a target="_blank" href="http://mafft.cbrc.jp/alignment/software/">MAFFT</a>. From this, we can produce a core genome.
+<li>Definition of the core genome and alignment of core genes using <a target="_blank" href="http://mafft.cbrc.jp/alignment/software/">MAFFT</a>.
 </li>
-<li>Calculate the distance between each strain using <a target="_blank" href="https://sco.h-its.org/exelixis/web/software/raxml/index.html"> RAxML</a>.
+<li>Computation of the distance matrix between all genomes using <a target="_blank" href="https://sco.h-its.org/exelixis/web/software/raxml/index.html"> RAxML</a>.
 </li>
-<li>Use this distance to compute <i> h/m</i> ratios for random samples of differing sizes.</li>
-<li>Use <i> h/m</i> ratios to produce a "control" graph for the species.
+<li>Application of our distance-based algorithm to estimate the ratio of homoplasic to non-homoplasic alleles (<i> h/m</i>) for randomly sampled combinations of genomes.</li>
+<li>Representation of <i> h/m</i> ratios in the "control" graph for each species.
 </li>
 </ul>
-This database has been built for all species on NCBI that meet the criteria listed above, and will be expanded as more species become available. 
+This database has been built for all species on NCBI that meet the criteria listed above, and will be expanded and updated as more genomes and species become available. 
 
-<h2>User Upload Process</h2>
+<h2>Candidate Genome Analysis</h2>
 
 <center>
 	<a target="_blank" href="res/upload.jpg">
@@ -40,18 +40,18 @@ This database has been built for all species on NCBI that meet the criteria list
 </center>
 <br>
 
-Once a user has uploaded their genome, it can be compared against the database for any species. This comparison process includes:
+Once a user has uploaded a candidate genome, it can be compared against the database for any species. This comparison process includes:
 <br><br>
 <ul>
-<li>Identifying orthologous genes between the user uploaded genome and the genomes in the database.
+<li>Identifying orthologous genes between the user's candidate genome and the core genome of the selected species in the database.
 </li>
-<li>The core genome of the species is updated to reflect the additional genome.
+<li>The core genome of the species is updated to include the candidate genome.
 </li>
-<li>The distance between every strain is calculated using RAxML.
+<li>The distance matrix between genomes is re-calculated using RAxML.
 </li>
-<li>Use this distance to compute <i> h/m</i> ratios for random samples of differing sizes, this time including the uploaded genome.
+<li>Estimation of <i> h/m</i> ratios for randomly sampled combinations of genomes, including the uploaded genome.
 </li>
-<li>Use <i> h/m</i> ratios to produce a "test" graph for the species, including data for the test genome.
+<li>Construction of the "test" graph comparing <i> h/m</i> ratios of the selected species with and without the candidate genome.
 </li>
 <li>An email is generated containing graphs and associated statistics that is sent to the user.</li>
 </ul>
