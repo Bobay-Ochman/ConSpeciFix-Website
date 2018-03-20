@@ -71,7 +71,8 @@ var server = http.createServer(function(request, response) {
       var form = new formidable.IncomingForm();
       form.maxFieldsSize = 1024 * 1024 * 1024;
       var timeStamp = new Date().getTime();
-
+      var newFileName = ''
+      form.on('fileBegin', function(name,file){newFileName=file.name;})
       form.uploadDir = 'uploads/'+ timeStamp;
       console.log("timeStamp: "+timeStamp);
       console.log("uploadDir: "+form.uploadDir);
@@ -87,7 +88,8 @@ var server = http.createServer(function(request, response) {
           var explore = fields.explore;
           console.log(usersEmail)
           console.log(usersSpecies)
-          const runCode = runSpawn('python',['engines/go.py',timeStamp,usersEmail,explore,usersSpecies]);
+          console.log(newFileName)
+          const runCode = runSpawn('python',['engines/go.py',timeStamp,usersEmail,explore,usersSpecies,newFileName]);
           runCode.stdout.on('data', function (data) {
             serverLog('stdout: ' + data.toString());
             if(data.toString().includes('we have started the devil.')){

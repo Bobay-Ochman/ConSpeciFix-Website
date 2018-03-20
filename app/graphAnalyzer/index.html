@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+  <head>
+    <title>h/m Graph Analyzer</title>
+    <link rel="stylesheet" href="graphAnalyzer/style.css">
+    <script src="https://code.angularjs.org/1.1.3/angular.js"></script>
+    <script src="graphAnalyzer/app.js"></script>
+  </head>
+
+  <body>
+    <div id="d">
+      <h1><i>h/m</i> Graph Analyzer</h1>
+      Upload your <i>h/m</i> file, then click to outline a shape to test.
+      <br>Press "Test Area" to see which strains appear in the area.
+      <br>
+      <br>*Note: the "Test Area" button will complete your shape back to the first point.
+      <br>Designed for the rm1.txt output files from the <a href="http://www.conspecifix.com">conspecifix</a> desktop process.
+      <br>
+      <br>
+
+      <input type="file" id="files" name="files[]" multiple />
+      <input id="testMe" type="button" value="Test Area"/>
+      <input id="resetArea" type="button" value="Reset Area"/>
+      <br>
+      <br>
+      <input id="makeMeSmall" type="button" value="Small"/>
+      <input id="makeMeMed" type="button" value="Medium"/>
+      <input id="makeMeBig" type="button" value="Large"/>
+      <br>
+      <br>
+      <canvas width="500" height="300" id="canvas" drawing></canvas>
+      <br>
+      <p>
+      </p>
+      <div class="row">
+        <div class="column">
+          <h2>Strains in area:</h2>
+          <div id="listInArea"></div>
+        </div>
+        <div class="column">
+          <h2>Strains not in area:</h2>
+          <div id="listNotInArea"></div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      
+
+    </div>
+  </body>
+
+</html>
