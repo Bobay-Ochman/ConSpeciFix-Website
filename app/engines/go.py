@@ -10,11 +10,10 @@ print os.path.dirname(os.path.realpath(__file__))
 timestamp = sys.argv[1]
 folderPath = 'uploads/'+sys.argv[1]+'/'
 email = sys.argv[2]
-explore = sys.argv[3]
-actualFileName = 'tmp'
+actualFileName = sys.argv[3]
+explore = sys.argv[4]
 if(explore=='false'):
-	species = sys.argv[4]
-	actualFileName = sys.argv[5]
+	species = sys.argv[5]
 
 #unzip the files
 files = os.listdir('/var/app/current/'+folderPath)

@@ -89,7 +89,7 @@ var server = http.createServer(function(request, response) {
           console.log(usersEmail)
           console.log(usersSpecies)
           console.log(newFileName)
-          const runCode = runSpawn('python',['engines/go.py',timeStamp,usersEmail,explore,usersSpecies,newFileName]);
+          const runCode = runSpawn('python',['engines/go.py',timeStamp,usersEmail,newFileName,explore,usersSpecies]);
           runCode.stdout.on('data', function (data) {
             serverLog('stdout: ' + data.toString());
             if(data.toString().includes('we have started the devil.')){
