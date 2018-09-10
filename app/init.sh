@@ -22,3 +22,7 @@ cd /tmp/deployment/application/efs/progs/mafft-folder/core
 sudo make clean
 sudo make
 sudo make install
+
+# Give us the outliers package
+echo "install.packages(\"outliers\", repos=\"https://cloud.r-project.org\")" > getPackages.R
+Rscript getPackages.R
