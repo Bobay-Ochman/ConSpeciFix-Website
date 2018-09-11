@@ -14,8 +14,8 @@ An overview of the file structure once the server is deployed. Tree outlines imp
 ```
 .
 +-- .ebextensions          // a hidden folder, must be named this to be found by AWS
-|   +-- 01run.config 		   //echos `ebextensions ran` you can search for in launch logs 
-|   +-- 02commands.config	 // tells launch scripts to run 'init.sh'
+|   +-- 01run.config       //echos `ebextensions ran` you can search for in launch logs 
+|   +-- 02commands.config  // tells launch scripts to run 'init.sh'
 +-- app.js                 // the server
 +-- build.sh               // compiles the project
 +-- efs                    // short for 'elastic file system'. legacy name, AWS EFS is not used.
