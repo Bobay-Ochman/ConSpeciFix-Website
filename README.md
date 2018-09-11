@@ -68,6 +68,14 @@ xhr.send(fd)
 
 5. `app/efs/ConSpeciFix/web/runner.py` is then called, properly initialized to run the correct files and uploads. The web variant of ConSpeciFix is different from the Database Building variety in that instead of reading the location of the database and test subject from a standard config file, it takes this information as a parameter. This allows a single copy of the code to be used simultaneously while pointing to different locations on the server's file system. The process begins by downloading the base comparison species from `http://conspecifix-data-bucket.s3-website.us-east-2.amazonaws.com`, and will email the user upon completion.
 
+## Adding new species to the database
+
+1. Prep the species you will be adding by running `findRepForUsearch.py` and `extractForWebsite.py` script in `auxScripts` of the ConSpeciFix project.
+
+2. Upload the zip files to the S3 conspecifix-data-bucket
+
+3. Add the names of the files to the list in `app/home/home.html`
+
 ## A note on site design
 
 This Angular / Bootstrap website has two different layers:
