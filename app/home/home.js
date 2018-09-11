@@ -98,7 +98,6 @@ angular.module('myApp.home', ['ngRoute'])
                 $scope.$apply(function(){
                     $scope.timeStamp = xhr.responseText;
                 });
-                //THIS IS THE TIMESTAMP :D :D :D :D :D :D :D
             }
         };
         window.scrollTo(0, 2000)

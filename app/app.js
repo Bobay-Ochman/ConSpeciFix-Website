@@ -26,6 +26,7 @@ testCode.stderr.on('data', function (data) {
 
 function serverLog(data){
   console.log("***"+ Date.now()+" "+data);
+  fs.appendFile("server.log","***"+ Date.now()+" "+data+"\n",function(err){});
 }
 
 
@@ -82,7 +83,7 @@ var server = http.createServer(function(request, response) {
             console.log("we've got some nice info! "+ form.uploadDir)
         }
         form.parse(request, function(err, fields, files) {
-          console.log("We are about to do the thing!")
+          console.log("We are about to start everything!")
           var usersEmail = fields.email;
           var usersSpecies = fields.species;
           var explore = fields.explore;
