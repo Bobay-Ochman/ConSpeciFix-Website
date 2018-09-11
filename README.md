@@ -9,7 +9,7 @@ Hello! Welcome to our website! This is where we will be hosting our bacteria spe
   - (HTML/CSS)
   - Magic
 
-## A Walkthrough: The File Structure
+## The File Structure
 An overview of the file structure once the server is deployed. Tree outlines important files only. Files marked `***` are not shipped and instead pulled dynamically at init or
 ```
 .
@@ -40,7 +40,7 @@ An overview of the file structure once the server is deployed. Tree outlines imp
 +-- webapp.css/js			// javascript and css files for website.
 ```
 
-## A Walkthrough: Setting up the Server
+## Setting up the Server
 
 An overview of how to deploy the server to AWS, and special notes about configuration that have been modified from vanilla elastic beanstalk.
 1. From the `app` directory, run `./build.sh`. This script gathers together the necessary files from the app folder, zips them together, and places the completed build in the `dist` directory, titled with a timestamp.
@@ -67,12 +67,11 @@ xhr.send(fd)
 4. `app/engines/go.py` then begins to prepare for the comparison by unzipping the upload, renaming it, and moving it to the correct location. Here, the process begins to differ for a comparison versus an exploratory phase. Continuing on we will only look at the comparison.
 5. `app/efs/ConSpeciFix/web/runner.py` is then called, properly initialized to run the correct files and uploads. 
 
-## Other thoughts
+## A note on site design
+
 This Angular / Bootstrap website has two different layers:
 
  - `index.html` contains the "wrappers" on the website, including
    - the nav bar
    - the footer
  - Content pages, like the `home` page, `people`, `process`, etc. are all segregated into folders and related files.
-
-This website was branched off of www.brianellissound.com, and thus was originally planned for launch using Amazon Web Service's Elastic Beanstalk. Several of the files (`init.sh`, `test.sh`, and `.ebextensions`) all refer to tests, initiation scripts, or configuration settings that are needed to run this website on EB.
