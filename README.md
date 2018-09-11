@@ -73,5 +73,6 @@ This Angular / Bootstrap website has two different layers:
 
  - `index.html` contains the "wrappers" on the website, including
    - the nav bar
-   - the footer
+   - the background image
+   - the box that content appears in
  - Content pages, like the `home` page, `people`, `process`, etc. are all segregated into folders and related files.
