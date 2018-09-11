@@ -13,31 +13,31 @@ Hello! Welcome to our website! This is where we will be hosting our bacteria spe
 An overview of the file structure once the server is deployed. Tree outlines important files only. Files marked `***` are not shipped and instead pulled dynamically at init or
 ```
 .
-+-- .ebextensions 			// a hidden folder, must be named this to be found by AWS
-|   +-- 01run.config 		//echos `ebextensions ran` you can search for in launch logs 
-|   +-- 02commands.config	// tells launch scripts to run 'init.sh'
-+-- app.js					// the server
-+-- build.sh				// compiles the project
-+-- efs				// short for 'elastic file system'. legacy name, AWS EFS is not used.
-|   +-- progs				// all programs that are called are stored here.
++-- .ebextensions          // a hidden folder, must be named this to be found by AWS
+|   +-- 01run.config 		   //echos `ebextensions ran` you can search for in launch logs 
+|   +-- 02commands.config	 // tells launch scripts to run 'init.sh'
++-- app.js                 // the server
++-- build.sh               // compiles the project
++-- efs                    // short for 'elastic file system'. legacy name, AWS EFS is not used.
+|   +-- progs              // all programs that are called are stored here.
 |   |   +-- mafft
 |   |   +-- usearch
 |   |   +-- etc.
-|   +-- results				// the location of the 'database' to compare against.
+|   +-- results             // the location of the 'database' to compare against.
 |   |   +-- Acetobacter_pasteurianus // *** database is dynamically loaded, ships empty.
 |   |   +-- etc.
-|   +-- uploads				// the location of the comparison files
-|   +-- ConSpeciFix			// *** cloned from github on deployment
-|   +-- ExploratoryPhase 	// *** cloned from github on deployment
-+-- engines					// holds the first code we run that is not node.js
-|   +-- go.py				// kicks off the whole comparison or exploration process.
-+-- graphAnalyzer 			// holds http://www.conspecifix.com/graphAnalyzer
-+-- index.html				// the website parent page.
-+-- init.sh					// initializing script run at server launch
-+-- package.json			// tells AWS dependencies for server.
-+-- res						// pictures, example output, etc.
-+-- uploads					// the first destination of all uploaded files.
-+-- webapp.css/js			// javascript and css files for website.
+|   +-- uploads           // the location of the comparison files
+|   +-- ConSpeciFix       // *** cloned from github on deployment
+|   +-- ExploratoryPhase  // *** cloned from github on deployment
++-- engines               // holds the first code we run that is not node.js
+|   +-- go.py             // kicks off the whole comparison or exploration process.
++-- graphAnalyzer         // holds http://www.conspecifix.com/graphAnalyzer
++-- index.html            // the website parent page.
++-- init.sh               // initializing script run at server launch
++-- package.json          // tells AWS dependencies for server.
++-- res                   // pictures, example output, etc.
++-- uploads               // the first destination of all uploaded files.
++-- webapp.css/js         // javascript and css files for website.
 ```
 
 ## Setting up the Server
