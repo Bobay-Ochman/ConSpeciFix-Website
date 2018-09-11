@@ -51,7 +51,7 @@ An overview of how to deploy the server to AWS, and special notes about configur
 	- The project is moved by AWS launching scripts to `/var/app/current/`
 	- the node.js server is started and is hooked up to listen to ports connecting the server to the `www.conspecifix.com` website.
 
-## A Walkthrough: Calling a Comparison
+## Calling a Comparison
 A step-by-step guide to how a comparison is launched.
 
 1. The form is filled out in `app/home/home.html`. This form connects to the angular variables through `ng-model`, the current state of the form item, as well as `ng-disabled` and `ng-click`, which determine actions of when the item is disabled and what function to call when it is clicked.
@@ -65,7 +65,8 @@ xhr.send(fd)
 3. The nodejs server in `app/app.js` receives the request near the logic `request.method==="POST"` and `request.url === "/upload"`. Here, we receive the incoming form and place the file from it into `app/uploads/<timestamp>/`. We then start `app/engines/go.py` making sure to give it through parameters some user information.
 
 4. `app/engines/go.py` then begins to prepare for the comparison by unzipping the upload, renaming it, and moving it to the correct location. Here, the process begins to differ for a comparison versus an exploratory phase. Continuing on we will only look at the comparison.
-5. `app/efs/ConSpeciFix/web/runner.py` is then called, properly initialized to run the correct files and uploads. 
+
+5. `app/efs/ConSpeciFix/web/runner.py` is then called, properly initialized to run the correct files and uploads. The web variant of ConSpeciFix is different from the Database Building variety in that instead of reading the location of the database and test subject from a standard config file, it takes this information as a parameter. This allows a single copy of the code to be used simultaneously while pointing to different locations on the server's file system. The process begins by downloading the base comparison species from `http://conspecifix-data-bucket.s3-website.us-east-2.amazonaws.com`, and will email the user upon completion.
 
 ## A note on site design
 
