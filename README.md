@@ -10,7 +10,7 @@ Hello! Welcome to our website! This is where we will be hosting our bacteria spe
   - Magic
 
 ## The File Structure
-An overview of the file structure once the server is deployed. Tree outlines important files only. Files marked `***` are not shipped and instead pulled dynamically at init or
+An overview of the file structure once the server is deployed. Tree outlines important files only. Files marked `***` are not shipped and instead pulled dynamically at init.
 ```
 .
 +-- .ebextensions          // a hidden folder, must be named this to be found by AWS
